@@ -10,40 +10,98 @@
 
   gtag('config', 'G-D1G7QKG0RM');
 </script>
+	<style>
+		body {
+			margin:10px;
+		}
+		#grid {
+			display:grid;
+			grid-template-columns:150px 1fr;
+		}
+		#grid #article {
+			padding:10px;
+		}
+		#grid ul {
+			border-right:2px dashed grey;
+			width:none;
+			margin:5px;
+			margin-left:20px;
+			padding:10px;
+		}
+		li>a {
+			color:gray;
+			text-decoration:none;
+			font-size:18px;
+			line-height:30px;
+		}
+		.title {
+			color:steelblue;
+			text-decoration:none;
+		}
+		#active {
+			color:steelblue;
+		}
+		h1 {
+			font-size:200%;
+			text-align:center;
+			border-bottom:2px solid gray;
+			margin:0px;
+			padding:10px;
+		}
+		
+		h2 {
+			color:green;
+			margin-top:10px;
+		}
+		#article ol {
+			padding-left:20px;
+		}
+		#service {
+			color:red;
+		}
+	</style>
         <title>오십견 - 자가진단</title>
     <meta charset="utf-8">
     </head>
 <body>
-    <h1><a href="index.html">내 휴대폰을 이용한 오십견 자가진단</a></h1>
-    <ol>
+    <h1><a href="index.html" class="title">내 휴대폰을 이용한 오십견 자가진단</a></h1>
+    
+<div id="grid">	
+	<ul>
         <li><a href="1.html">오십견이란?</a></li>
-        <li><a href="2.html">자가진단</a></li>
-        <li><a href="3.html ">치료방법</a></li>
-    </ol>
-    <h2>자가진단</h2>
-    <p>
+        <li><a href="2.html" id="active">자가진단</a></li>
+        <li><a href="3.html">치료방법</a></li>
+    </ul>
+    
+	<div id="article">
+		<h2>자가진단</h2>
+    	<p>
         견관절의 동통 및 운동통 등으로 인한 활동장애와 환부가 뻣뻣해지거나 
         저리는 등의 이상감각 등의 증상을 나타내는데, 
         특징적인 것으로는 밤에 통증이 심하여 깊은 잠을 잘 수가 없었으나 
         아침에 일어나 관절을 조금씩 움직이면 통증이 경감되기도 하고, 
          옷을 입고 벗기가 힘들다고 호소하는 경우가 많습니다.
-    </p>
-    <br>
-    <h2>내 휴대폰을 이용한 오십견 자가진단 해보기</h2>
-    <p>
-        (1) 아래의 start 버튼을 누른 후, 벽에 최대한 기대어 섭니다.<br>
-        (2) 아프거나 잘 움직이지 않는 팔(우측 혹은 좌측)을 벽에 떨어지지 않게 하면서 최대한 귀에 닿을 수 있게 들어봅니다.<br>
-        (3) 잘 인식이 되지 않는다면, 팔을 최대한 들었을 때 화면에 손끝이 보일 수 있도록 휴대폰을 더 멀리 움직인 후 (1)부터 다시 해봅니다.<br><br>
-        --만약 start 버튼을 눌러도 실행이 되지 않는다면 <strong><u><a href="https://teachablemachine.withgoogle.com/models/TrBTq79qe/">여기</a></u></strong>를 클릭(click)해주세요.
-    </p>
-    <p>
+		</p>
+    	<br>
+    	<h2>내 휴대폰을 이용한 오십견 자가진단 해보기</h2>
+    	<p>
+			(1) 아래의 Start 버튼을 누른 후, 카메라에 대한 접근 권한을 <u><strong>허용</strong></u>합니다.<br>
+		(2) 아래 화면에 자신의 얼굴이 나오는 것을 확인합니다.<br>
+		(3) 벽에 바싹 기댄 후 옆으로 나란히 하였을 때 양쪽 팔이 화면에 모두 나올 수 있도록, 휴대폰과 신체의 간격을 조정합니다.<br>
+		(4) 아프거나 잘 움직이지 않는 팔(<span id="service">현재는 우측만 서비스 가능</span>)을 벽에 떨어지지 않게 하면서 최대한 귀에 닿을 수 있게 들어봅니다.<br>
+			(5) 최대한 팔을 든 자세를 유지한 채, <u><strong>숫자 1이 나오는 항목</strong></u>이 무엇인지 확인합니다.<br><br>
+        <span style="font-style:oblique;">--만약 Start 버튼을 눌러도 실행이 되지 않는다면 
+			<strong><u><a href="https://teachablemachine.withgoogle.com/models/TrBTq79qe/">
+			여기</a></u></strong>를 클릭(click)해주세요.</span>
+    	</p>
+    	<p>
         <div>Teachable Machine Pose Model</div>
-<button type="button" onclick="init()">Start</button>
-<div><canvas id="canvas"></canvas></div>
-<div id="label-container"></div>
-<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@teachablemachine/pose@0.8/dist/teachablemachine-pose.min.js"></script>
-<script type="text/javascript">
+			<button type="button" onclick="init()">Start</button>
+			<div><canvas id="canvas"></canvas></div>
+			<div id="label-container"></div>
+			<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+			<script src="https://cdn.jsdelivr.net/npm/@teachablemachine/pose@0.8/dist/teachablemachine-pose.min.js"></script>
+			<script type="text/javascript">
     // More API functions here:
     // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/pose
 
@@ -62,7 +120,7 @@
         maxPredictions = model.getTotalClasses();
 
         // Convenience function to setup a webcam
-        const size = 200;
+        const size = 400;
         const flip = true; // whether to flip the webcam
         webcam = new tmPose.Webcam(size, size, flip); // width, height, flip
         await webcam.setup(); // request access to the webcam
@@ -112,13 +170,17 @@
             }
         }
     }
-</script>
-    </p>
-    <p>
-        - <strong>FullROM</strong>: 어깨가 <u>정상적으로</u> 움직입니다.<br>
-        - <strong>mildROM</strong>: <u>약간의</u> 어깨 운동 제한이 있을 수 있습니다.<br>
-        - <strong>moderateROM</strong>: <u>중등도 이상의</u> 어꺠 운동 제한이 있을 수 있습니다.<br>
-        - <strong>severeROM</strong>: <u>심각한</u> 어깨 운동 제한이 있을 수 있습니다.
-    </p>
+			</script>
+    	</p>
+    	<p>
+        	<ol>
+				<li><strong>FullROM</strong>: 어깨가 <u>정상적으로</u> 움직입니다.<br></li>
+				<li><strong>mildLOM</strong>: <u>약간의</u> 어깨 운동 제한이 있을 수 있습니다. (오십견 초기) <br></li>
+				<li><strong>moderateLOM</strong>: <u>중등도 이상의</u> 어꺠 운동 제한이 있을 수 있습니다. (오십견 초기 ~ 중기) <br></li>
+				<li><strong>severeLOM</strong>: <u>심각한</u> 어깨 운동 제한이 있을 수 있습니다. (오십견 중기 이상).\</li>
+			</ol>
+		</p>
+	</div>
+</div>	
 </body>
 </html>
