@@ -17,7 +17,16 @@
     </head>
 <body>
     <h1><a href="index.html" class="title">내 휴대폰을 이용한 오십견 자가진단 테스트</a></h1>
-    
+    <br>
+		<input type="button" value="dark mode " onclick="
+		var target = document.querySelector('body')
+		if (this.value === 'dark mode '){										target.style.backgroundColor= 'black';			
+		target.style.color= 'white';
+		this.value = 'white m ode';}
+		else {
+		target.style.backgroundColor= 'white';
+		target.style.color= 'black';
+		this.value = 'dark mode ';}">
 <div id="grid">	
 	<ul>
         <li><a href="1.html">오십견이란?</a></li>
