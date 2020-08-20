@@ -56,7 +56,7 @@
 		#article ol {
 			padding-left:20px;
 		}
-		#service {
+		#notify {
 			color:red;
 		}
 		@media(max-width:650px) {
@@ -70,6 +70,11 @@
 			padding-left:20px;
 			}
 		}
+		#smalltitle {
+				color:indianred;
+				font-size: 17px;
+				font-weight: bold;
+			}
 	</style>
         <title>오십견 - 자가진단</title>
     <meta charset="utf-8">
@@ -96,15 +101,13 @@
     	<br>
     	<h2>내 휴대폰을 이용한 오십견 자가진단 해보기</h2>
     	<p>
-			(1) 아래의 Start 버튼을 누른 후, 카메라에 대한 접근 권한을 <u><strong>허용</strong></u>합니다.<br>
+			(기본 인터넷 애플리케이션에서 실행해주세요)<br><br>
+			(1) 아래의 Start 버튼을 누른 후, <u><strong>카메라에 대한 접근 권한을 허용</strong></u>합니다.<br>
 		(2) 아래 화면에 자신의 얼굴이 나오는 것을 확인합니다.<br>
 		(3) 벽에 바싹 기댄 후 옆으로 나란히 하였을 때 양쪽 팔이 화면에 모두 나올 수 있도록, 휴대폰과 신체의 간격을 조정합니다.<br>
-		(4) 아프거나 잘 움직이지 않는 팔(<span id="service">현재는 우측만 서비스 가능</span>)을 벽에 떨어지지 않게 하면서 최대한 귀에 닿을 수 있게 들어봅니다.<br>
+		(4) 양측 팔을 벽에 떨어지지 않게 하면서, <span id="notify">팔꿈치를 곧게 편 채 최대한 귀에 닿을 수 있게 </span> 들어봅니다.<br>
 			(5) 최대한 팔을 든 자세를 유지한 채, <u><strong>숫자 1이 나오는 항목</strong></u>이 무엇인지 확인합니다.<br><br>
-        <span style="font-style:oblique;">--만약 Start 버튼을 눌러도 실행이 되지 않는다면 
-			<strong><u><a href="https://teachablemachine.withgoogle.com/models/TrBTq79qe/">
-			여기</a></u></strong>를 클릭(click)해주세요.</span>
-    	</p>
+		</p>
     	<p>
         <div>Teachable Machine Pose Model</div>
 			<button type="button" onclick="init()">Start</button>
@@ -131,7 +134,7 @@
         maxPredictions = model.getTotalClasses();
 
         // Convenience function to setup a webcam
-        const size = 400;
+        const size = 600;
         const flip = true; // whether to flip the webcam
         webcam = new tmPose.Webcam(size, size, flip); // width, height, flip
         await webcam.setup(); // request access to the webcam
@@ -183,12 +186,18 @@
     }
 			</script>
     	</p>
+		<p>
+        <span style="font-style:oblique;">--만약 Start 버튼을 눌러도 실행이 되지 않는다면 
+			<strong><u><a href="https://teachablemachine.withgoogle.com/models/TrBTq79qe/">
+			여기</a></u></strong>를 클릭하여 아래의 순서대로 해주세요.<br>1. 새 창이 실행되면, 우측 설정에서 Webcam을 file로 변경합니다.<br> 2. (1)에서 (5)까지 실행 후 카메라로 촬영한 사진(이미지)을 업로드하여 <u><strong>숫자 1이 나오는 항목</strong></u>이 무엇인지 확인합니다.</span><br><br>
+    	</p>
+		<h2>평가 결과</h2>
     	<p>
         	<ol>
-				<li><strong>FullROM</strong>: 어깨가 <u>정상적으로</u> 움직입니다.<br></li>
-				<li><strong>mildLOM</strong>: <u>약간의</u> 어깨 운동 제한이 있을 수 있습니다. (오십견 초기) <br></li>
-				<li><strong>moderateLOM</strong>: <u>중등도 이상의</u> 어꺠 운동 제한이 있을 수 있습니다. (오십견 초기 ~ 중기) <br></li>
-				<li><strong>severeLOM</strong>: <u>심각한</u> 어깨 운동 제한이 있을 수 있습니다. (오십견 중기 이상).\</li>
+				<li><strong>시작</strong>: 위의 순서에 따라 검사를 다시 진행해주세요.<br></li>
+				<li><strong>좌측 어깨운동제한</strong>: <u>좌측 어깨</u>의 오십견이 의심됩니다.<br></li>
+				<li><strong>우측 어깨운동제한</strong>: <u>우측 어깨</u>의 오십견이 의심됩니다.<br></li>
+				<li><strong>정상</strong>: 양측 모두 <u>정상</u>입니다.</li>
 			</ol>
 		</p>
 	</div>
