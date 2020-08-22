@@ -1,20 +1,26 @@
 		var Links = {setColor: function(color, activecolor) {
-		var alist = document.querySelectorAll('li>a');
-		var i = 0
-		while (i<alist.length) {
-		alist[i].style.color = color;
-		i += 1}	
+		// --- original code ---
+		// var alist = document.querySelectorAll('li>a');
+		// var i = 0
+		// while (i<alist.length) {
+		// alist[i].style.color = color;
+		// i += 1}
+		// --- Using jQuery as follows ---
+		$('li>a').css('color', color)
 		document.querySelector('#active').style.color = activecolor;
 		}
 	}
 		
 		var Body = {
 			setBackgroundcolor: function(color) {
-		document.querySelector('body').style.backgroundColor=color;	
+		// --- original code ---
+		//document.querySelector('body').style.backgroundColor=color;
+		$('body').css('backgroundColor', color)
 		},
 			setColor: function(color) {
-		document.querySelector('body').style.color=color;
-			} 
+		// --- original code ---
+		//document.querySelector('body').style.color=color;
+		$('body').css('color', color)	} 
 	}
 		
 		function darkwhitehandler(self) {
