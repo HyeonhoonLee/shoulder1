@@ -21,11 +21,26 @@
 		var target = document.querySelector('body')
 		if (this.value === 'dark mode '){										target.style.backgroundColor= 'black';			
 		target.style.color= 'white';
-		this.value = 'white mode';}
+		this.value = 'white mode';
+		
+		var alist = document.querySelectorAll('li>a');
+		var i = 0
+		while (i<alist.length) {
+		alist[i].style.color = 'white';
+		i += 1}	
+		document.querySelector('#active').style.color = 'steelblue';
+}
 		else {
 		target.style.backgroundColor= 'white';
 		target.style.color= 'black';
-		this.value = 'dark mode ';}">
+		this.value = 'dark mode ';
+		var alist = document.querySelectorAll('li>a');
+		var i = 0
+		while (i<alist.length) {
+		alist[i].style.color = 'gray';
+		i += 1}
+		document.querySelector('#active').style.color = 'steelblue';
+}">
 <div id="grid">	
 	<ul>
         <li><a href="1.html">오십견이란?</a></li>
