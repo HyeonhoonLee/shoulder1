@@ -11,22 +11,16 @@
 
   gtag('config', 'G-D1G7QKG0RM');
 </script>
+		
 	<link rel="stylesheet" href="style.css">
         <title>오십견 - 오십견이란?</title>
     <meta charset="utf-8">
+	<script src="color.js"></script>
     </head>
 <body>
     <h1><a href="index.html" class="title">내 휴대폰을 이용한 오십견 자가진단 테스트</a></h1>
     <br>
-	<input type="button" value="dark mode " onclick="
-		var target = document.querySelector('body')
-		if (this.value === 'dark mode '){										target.style.backgroundColor= 'black';			
-		target.style.color= 'white';
-		this.value = 'white mode';}
-		else {
-		target.style.backgroundColor= 'white';
-		target.style.color= 'black';
-		this.value = 'dark mode ';}">
+	<input type="button" value="dark mode " onclick="darkwhitehandler(this)">
 <div id="grid">	
 	<ul>
         <li><a href="1.html" id="active">오십견이란?</a></li>
