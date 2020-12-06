@@ -1,4 +1,4 @@
-# shoulder1
+
 This project is made for early detection of adhesive capsulitis (frozen shoulder) with smartphone.
 
 I used Teachable Machine (google) for making deep learning model with transfer learning.
